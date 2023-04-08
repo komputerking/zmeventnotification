@@ -1491,7 +1491,7 @@ sub loadMonitors {
   if (version->parse(ZM_VERSION) >= version->parse('1.37.13')) {
     $sql .= ' Capturing != \'None\'';
   } else {
-    $sql .= ' find_in_set( `Function`, \'Modect,Mocord,Nodect\' )'
+    $sql .= ' find_in_set( `Function`, \'Modect,Mocord,Nodect,Record\' )'
   }
   $sql .= ( $Config{ZM_SERVER_ID} ? 'AND `ServerId`=?' : '' );
   my $sth = $dbh->prepare_cached($sql)
